@@ -2,9 +2,9 @@
 
 
 $koneksi = mysqli_connect("localhost","root","","tugas_pwpb");
-if ($conn) {
-	echo "tersambung";
-}
+// if ($koneksi) {
+// 	echo "tersambung";
+// }
 
 
 
