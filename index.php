@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
-<?php include 'head.php'; ?>
+
+<?php 
+include 'head.php';
+include 'koneksi.php';
+
+$dataPegawai = mysqli_query($koneksi, "SELECT * FROM pegawai INNER JOIN bidang ON pegawai.id_bidang = bidang.id_bidang ");
+
+$no = 1;
+ ?>
 <body>
 
 	<!-- Kelompok :
@@ -15,12 +23,27 @@
 
 
 <table border="1">
-	<tr>
-		<th>No</th>
-		<th>Nama</th>
-		<th>Telepon</th>
-		<th>Bidang</th>
-	</tr>
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Nama</th>
+			<th>Telepon</th>
+			<th>Bidang</th>
+			<th>Aksi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($dataPegawai as $pegawai): ?>
+			<tr>
+				<td><?php echo $no++ ?></td>
+				<td><?php echo $pegawai["nama"] ?></td>
+				<td><?php echo $pegawai["no_hp"] ?></td>
+				<td><?php echo $pegawai["bidang"] ?></td>
+				<td><a href="">Update</a> 
+					| <a href="">Hapus</a></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
 
 
 
