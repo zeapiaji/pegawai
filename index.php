@@ -39,7 +39,7 @@ $no = 1;
 				<td><?php echo $pegawai["nama"] ?></td>
 				<td><?php echo $pegawai["no_hp"] ?></td>
 				<td><?php echo $pegawai["bidang"] ?></td>
-				<td><a href="">Update</a> 
+				<td><a href="edit.php?id=<?php echo $pegawai['no_pegawai']; ?>">Edit</a> 
 					| <a href="">Hapus</a></td>
 			</tr>
 		<?php endforeach ?>

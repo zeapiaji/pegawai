@@ -21,4 +21,21 @@
 		}
 
 	}
+
+
+	function updatePegawai($data){
+		global $koneksi;
+
+
+		$id= $data['update'];
+
+		$nama = $data['nama'];
+		$telepon = $data['no_hp'];
+		$bidang = $data['bidang'];
+
+		$update= mysqli_query($koneksi, "UPDATE pegawai SET nama='$nama', no_hp='$telepon', id_bidang= '$bidang' WHERE no_pegawai='$id' ");
+		if ($update) {
+			header('location: index.php');
+		}
+	}
  ?>
