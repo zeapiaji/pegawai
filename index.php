@@ -40,7 +40,7 @@ $no = 1;
 				<td><?php echo $pegawai["no_hp"] ?></td>
 				<td><?php echo $pegawai["bidang"] ?></td>
 				<td><a href="">Update</a> 
-					| <a href="">Hapus</a></td>
+					| <a href="delete.php?id=<?php 	echo $pegawai["no_pegawai"] ?>">Hapus</a></td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>
